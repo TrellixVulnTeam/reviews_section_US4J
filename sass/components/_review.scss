@@ -1,0 +1,65 @@
+.review {
+	background-color: #fff;
+	padding: 3rem;
+	padding-left: 6rem;
+	width: 70%;
+	transform: skewX(-12deg);
+	box-shadow: 0rem 2rem 4rem rgba($color-black, 0.4);
+
+	&__name--text,
+	&__text,
+	&__heading {
+		font-family: "Montserrat", sans-serif;
+	}
+
+	&__heading {
+		font-size: 2rem;
+	}
+
+	&__shape {
+		float: left;
+		height: 10rem;
+		width: 10rem;
+		shape-outside: circle(50% at 50% 50%);
+		-webkit-shape-outside: circle(50% at 50% 50%);
+		clip-path: circle(50% at 50% 50%);
+		-webkit-clip-path: circle(50% at 50% 50%);
+		transform: translateX(-3rem) skewX(12deg);
+		position: relative;
+	}
+
+	&__img {
+		height: 100%;
+		backface-visibility: hidden;
+	}
+
+	&__name {
+		position: absolute;
+		text-align: center;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -20%);
+		opacity: 0;
+		transition: all 0.5s ease;
+		z-index: 3;
+
+		&--text {
+			font-size: 1.6rem;
+			color: $color-white;
+		}
+	}
+
+	&__statement {
+		font-size: 1.6rem;
+		transform: skewX(12deg);
+	}
+
+	&:hover &__name {
+		opacity: 1;
+		transform: translate(-50%, -50%);
+	}
+	&:hover &__img {
+		filter: blur(0.3rem) brightness(80%);
+		z-index: -1;
+	}
+}
